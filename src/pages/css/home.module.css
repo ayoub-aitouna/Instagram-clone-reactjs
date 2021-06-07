@@ -1,0 +1,109 @@
+.conatiner {
+    height: 100%;
+    display: grid;
+    margin-top: 3vh;
+    grid-template-columns: 15% auto 40%;
+    grid-template-rows: 20% 80%;
+    grid-template-areas: " empty stories pdetails" "empty posts pdetails";
+}
+
+.stories {
+    grid-area: stories;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.st_con {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border: 1px solid hsl(0, 0%, 0%, 15%);
+}
+
+.st_con_ul {
+    height: 100%;
+    width: 100%;
+    list-style: none;
+    margin: 0 0 0 3%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+.st_con_ul::-webkit-scrollbar {
+    display: none;
+}
+
+.st_con_ul::-webkit-scrollbar-thumb {
+    background-color: hsl(0, 0%, 0%, 10%);
+    height: 5px;
+    width: 5px;
+    border-radius: 5px;
+}
+
+.st_con_icon {
+    position: absolute;
+    width: max(20px, 1.7vw);
+    height: max(20px, 1.7vw);
+    display: grid;
+    place-items: center;
+    background-color: hsl(0, 0%, 100%, 90%);
+    top: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px -3px 15px hsl(0, 0%, 0%, 100%);
+    cursor: pointer;
+}
+
+.st_con_Prev {
+    left: 3%;
+}
+
+.r_icon {
+    color: transparent;
+}
+
+.st_con_Next {
+    right: 1%;
+}
+
+.st_li {
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    user-select: none;
+}
+
+.post_container {
+    grid-area: posts;
+}
+
+.profile_details {
+    grid-area: pdetails;
+}
+
+.post_ul {
+    list-style: none;
+    user-select: none;
+}
+
+@media screen and (max-width: 480px) {
+    .conatiner {
+        grid-template-columns: 100%;
+        grid-template-rows: 15% 80%;
+        grid-template-areas: "stories" " posts";
+    }
+    .post_container li {
+        width: 100%;
+        display: grid;
+        place-items: center;
+    }
+}

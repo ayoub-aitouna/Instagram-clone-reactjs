@@ -1,0 +1,44 @@
+.parent {
+    width: max(100px, 5vw);
+    height: 100%;
+    background-color: bisques;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.img {
+    height: 5vw;
+    width: 5vw;
+    border: 2px solid red;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    overflow: hidden;
+}
+
+.img img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.username {
+    width: 100%;
+    margin-top: 5%;
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+.username p {
+    text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+    .img {
+        height: 19vw;
+        width: 19vw;
+    }
+}

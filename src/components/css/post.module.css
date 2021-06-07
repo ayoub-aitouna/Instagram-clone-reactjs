@@ -1,0 +1,147 @@
+.post_parent {
+    width: 600px;
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: 10% auto 10%;
+    grid-template-rows: 6% auto 30%;
+    grid-template-areas: "profile username Pmenu" "post post post" "details details details";
+    border: 1px solid hsl(0, 0%, 0%, 10%);
+    margin: 5% 0;
+}
+
+.img {
+    grid-area: profile;
+    display: grid;
+    place-items: center;
+    place-content: center;
+}
+
+.img img {
+    width: max(30px, 2.5vw);
+    height: max(30px, 2.5vw);
+    object-fit: cover;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.username {
+    grid-area: username;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.menu {
+    grid-area: Pmenu;
+    display: grid;
+    place-items: center;
+    font-size: 1.5rem;
+}
+
+.post_img {
+    grid-area: post;
+    overflow: hidden;
+}
+
+.post_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.deatils {
+    grid-area: details;
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: 7% 7% auto 10%;
+    grid-template-rows: 10% 5% auto 15%;
+    grid-template-areas: "h co sh sa" "nl nl e e" "c c c c" "i ac ac pc";
+    padding: 1% 0 0 0;
+}
+
+.heart,
+.commint,
+.save,
+.share,
+.NumberLike,
+.unit,
+.emoji,
+.post_commit {
+    display: grid;
+    place-items: center;
+    place-content: center;
+    font-size: clamp(1.5rem, 1.7vw, 3rem);
+}
+
+.share {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.heart {
+    grid-area: h;
+}
+
+.commint {
+    grid-area: co;
+}
+
+.share {
+    grid-area: sh;
+}
+
+.save {
+    grid-area: sa;
+}
+
+.NumberLike {
+    grid-area: nl;
+    font-size: 0.8rem;
+    place-content: start;
+    padding-left: 5%;
+}
+
+.commints {
+    grid-area: c;
+}
+
+.emoji {
+    grid-area: i;
+    font-size: 1.7rem;
+}
+
+.add_commit {
+    grid-area: ac;
+}
+
+.add_commit input {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.add_commit input:focus {
+    outline: none;
+}
+
+.post_commit {
+    grid-area: pc;
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: hsl(256, 97%, 46%);
+}
+
+@media screen and (max-width: 480px) {
+    .post_parent {
+        width: 95vw;
+        grid-template-columns: 10% auto 10%;
+        grid-template-rows: 8% auto 30%;
+        grid-template-areas: "profile username Pmenu" "post post post" "details details details";
+        border: none;
+    }
+    .deatils {
+        grid-template-columns: 10% 10% auto 10%;
+        grid-template-rows: 20% 5% auto 15%;
+    }
+}
