@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/Instagram-clone-reactjs/static/css/main.1034b56f.chunk.css",
-    "main.js": "/Instagram-clone-reactjs/static/js/main.72201e1f.chunk.js",
-    "main.js.map": "/Instagram-clone-reactjs/static/js/main.72201e1f.chunk.js.map",
+    "main.js": "/Instagram-clone-reactjs/static/js/main.fdb2439b.chunk.js",
+    "main.js.map": "/Instagram-clone-reactjs/static/js/main.fdb2439b.chunk.js.map",
     "runtime-main.js": "/Instagram-clone-reactjs/static/js/runtime-main.09142471.js",
     "runtime-main.js.map": "/Instagram-clone-reactjs/static/js/runtime-main.09142471.js.map",
-    "static/js/2.d2451659.chunk.js": "/Instagram-clone-reactjs/static/js/2.d2451659.chunk.js",
-    "static/js/2.d2451659.chunk.js.map": "/Instagram-clone-reactjs/static/js/2.d2451659.chunk.js.map",
+    "static/js/2.e0654493.chunk.js": "/Instagram-clone-reactjs/static/js/2.e0654493.chunk.js",
+    "static/js/2.e0654493.chunk.js.map": "/Instagram-clone-reactjs/static/js/2.e0654493.chunk.js.map",
     "index.html": "/Instagram-clone-reactjs/index.html",
     "static/css/main.1034b56f.chunk.css.map": "/Instagram-clone-reactjs/static/css/main.1034b56f.chunk.css.map",
-    "static/js/2.d2451659.chunk.js.LICENSE.txt": "/Instagram-clone-reactjs/static/js/2.d2451659.chunk.js.LICENSE.txt"
+    "static/js/2.e0654493.chunk.js.LICENSE.txt": "/Instagram-clone-reactjs/static/js/2.e0654493.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.09142471.js",
-    "static/js/2.d2451659.chunk.js",
+    "static/js/2.e0654493.chunk.js",
     "static/css/main.1034b56f.chunk.css",
-    "static/js/main.72201e1f.chunk.js"
+    "static/js/main.fdb2439b.chunk.js"
   ]
 }
