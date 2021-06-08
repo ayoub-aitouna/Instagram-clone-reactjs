@@ -21,7 +21,7 @@ function Home(props) {
     const maxScroll =
       StoriesUl.current.scrollWidth - StoriesUl.current.clientWidth;
     StoriesUl.current.scrollLeft = scrolledS;
-    console.log(scrolledS);
+
     if (scrolledS <= 500) {
       prevoise.current.style = "display:none";
     } else {

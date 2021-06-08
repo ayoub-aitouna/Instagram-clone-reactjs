@@ -1,0 +1,49 @@
+:root {
+    --mtopsize: 7vh;
+}
+
+.parent {
+    background-color: #fff;
+    height: var(--mtopsize);
+    width: 100vw;
+    position: fixed;
+    top: 0%;
+    z-index: 1;
+    display: none;
+}
+
+.insta_icon {
+    margin-left: 5%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.insta_icon img {
+    width: max(100px, 3vw);
+}
+
+.elements {
+    width: 100%;
+}
+
+.ul {
+    padding: 0% 5%;
+    width: 100%;
+    gap: 15px;
+    height: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.mtop_icon {
+    font-size: max(1.8rem, 2vw);
+}
+
+@media screen and (max-width: 480px) {
+    .parent {
+        display: flex;
+    }
+}

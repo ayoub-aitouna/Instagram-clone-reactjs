@@ -25,6 +25,6 @@ html {
 @media screen and (max-width: 480px) {
     .App {
         background-color: #fff;
-        margin-bottom: 10vh;
+        margin: var(--mtopsize) 0 10vh 0;
     }
 }

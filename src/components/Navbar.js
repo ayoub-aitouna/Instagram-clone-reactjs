@@ -36,6 +36,8 @@ function Navbar(props) {
   const srRecentContainer = useRef(null);
   const searchBar = useRef(null);
   const profileRef = useRef(null);
+  const [windowWidth] = useState(window.innerWidth);
+
   useOutsideRecent(profileRef, () => {
     setPmenu(false);
   });
@@ -46,7 +48,7 @@ function Navbar(props) {
   });
   const showProfileMenu = () => {
     setPmenu(!Pmenu);
-    setlocation(4);
+    if (windowWidth > 480) setlocation(4);
   };
   const Searclick = () => setuseRecent(true);
   useEffect(() => {
@@ -133,14 +135,23 @@ function Navbar(props) {
                 </Link>{" "}
               </li>{" "}
               <li className="nav-routs-li">
-                <Link to="/messanger">
-                  {" "}
-                  {location === 1 ? (
-                    <Icon_Ri.RiSendPlaneFill className="nav-bar-icon" />
-                  ) : (
-                    <Icon_Ri.RiSendPlaneLine className="nav-bar-icon" />
-                  )}{" "}
-                </Link>{" "}
+                {windowWidth <= 480 ? (
+                  <Link to="/Search">
+                    {location === 5 ? (
+                      <Icon_Ri.RiSearchFill className="nav-bar-icon" />
+                    ) : (
+                      <Icon_bs.BsSearch className="nav-bar-icon" />
+                    )}
+                  </Link>
+                ) : (
+                  <Link to="/messanger">
+                    {location === 1 ? (
+                      <Icon_Ri.RiSendPlaneFill className="nav-bar-icon" />
+                    ) : (
+                      <Icon_Ri.RiSendPlaneLine className="nav-bar-icon" />
+                    )}
+                  </Link>
+                )}
               </li>{" "}
               <li className="nav-routs-li">
                 <Link to="/explore">
@@ -152,10 +163,24 @@ function Navbar(props) {
                   )}{" "}
                 </Link>{" "}
               </li>{" "}
-              <li className="nav-routs-li" onClick={() => setlocation(3)}>
-                {" "}
+              <li
+                className="nav-routs-li"
+                onClick={() => {
+                  if (windowWidth > 480) setlocation(3);
+                }}
+              >
                 {location === 3 ? (
-                  <Icon_ai.AiFillHeart className="nav-bar-icon" />
+                  windowWidth < 480 ? (
+                    <Link to="/notifecations">
+                      <Icon_ai.AiFillHeart className="nav-bar-icon" />
+                    </Link>
+                  ) : (
+                    <Icon_ai.AiFillHeart className="nav-bar-icon" />
+                  )
+                ) : windowWidth < 480 ? (
+                  <Link to="/Notification">
+                    <Icon_ai.AiOutlineHeart className="nav-bar-icon" />
+                  </Link>
                 ) : (
                   <Icon_ai.AiOutlineHeart className="nav-bar-icon" />
                 )}{" "}
@@ -165,10 +190,19 @@ function Navbar(props) {
                   className={location === 4 ? "img clicked" : `img`}
                   onClick={() => showProfileMenu()}
                 >
-                  <img
-                    src="https://images.pexels.com/photos/4717019/pexels-photo-4717019.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-                    alt=""
-                  />
+                  {windowWidth < 480 ? (
+                    <Link to="/Profile">
+                      <img
+                        src="https://images.pexels.com/photos/4717019/pexels-photo-4717019.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+                        alt=""
+                      />
+                    </Link>
+                  ) : (
+                    <img
+                      src="https://images.pexels.com/photos/4717019/pexels-photo-4717019.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+                      alt=""
+                    />
+                  )}{" "}
                 </div>{" "}
                 <div
                   ref={profileRef}

@@ -1,8 +1,16 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { useState } from "react";
-import { Navbar } from "./components";
-import { Home, Messanger, Explore, Auth, Profile } from "./pages";
+import { Navbar, Mtop } from "./components";
+import {
+  Home,
+  Messanger,
+  Explore,
+  Auth,
+  Profile,
+  Notification,
+  Search,
+} from "./pages";
 
 function App({ match }) {
   const [isloged, setlogin] = useState(true);
@@ -11,10 +19,14 @@ function App({ match }) {
   return (
     <>
       <div className="App">
-        <Router>
+        <Router basename="/Instagram-clone-reactjs">
+          {" "}
           {isloged ? (
             <>
-              <Navbar path_code={location} isLoged={() => setlogin(false)} />
+              <Mtop path_code={location} className="Mtop">
+                {" "}
+              </Mtop>{" "}
+              <Navbar path_code={location} isLoged={() => setlogin(false)} />{" "}
               <Switch>
                 <Route
                   exact
@@ -26,7 +38,7 @@ function App({ match }) {
                       }}
                     />
                   )}
-                ></Route>
+                ></Route>{" "}
                 <Route
                   path="/messanger"
                   component={() => (
@@ -36,7 +48,7 @@ function App({ match }) {
                       }}
                     />
                   )}
-                ></Route>
+                ></Route>{" "}
                 <Route
                   path="/explore"
                   component={() => (
@@ -46,17 +58,47 @@ function App({ match }) {
                       }}
                     />
                   )}
+                ></Route>{" "}
+                <Route
+                  path="/profile"
+                  component={() => (
+                    <Profile
+                      path={() => {
+                        setlocation(4);
+                      }}
+                    />
+                  )}
+                ></Route>{" "}
+                <Route
+                  path="/Notification"
+                  component={() => (
+                    <Notification
+                      path={() => {
+                        setlocation(3);
+                      }}
+                    />
+                  )}
                 ></Route>
-                <Route exact path="/profile" component={Profile}></Route>
+                <Route
+                  path="/Search"
+                  component={() => (
+                    <Search
+                      path={() => {
+                        setlocation(5);
+                      }}
+                    />
+                  )}
+                ></Route>
+                {/*<Route exact path="/profile" component={Profile}></Route>*/}
               </Switch>
             </>
           ) : (
             <div>
-              <Auth isLoged={() => setlogin(true)} />
+              <Auth isLoged={() => setlogin(true)} />{" "}
             </div>
-          )}
-        </Router>
-      </div>
+          )}{" "}
+        </Router>{" "}
+      </div>{" "}
     </>
   );
 }
